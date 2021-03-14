@@ -1,0 +1,6 @@
+framework module Pods_rnd_main_modular_rnd_main_modularUITests {
+  umbrella header "Pods-rnd-main-modular-rnd-main-modularUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

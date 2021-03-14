@@ -7,16 +7,28 @@
 
 import UIKit
 import CoreData
+import LoginModule
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+    var window: UIWindow?
+      
+      func application(_ application: UIApplication, didFinishLaunchingWithOptions
+        launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = createRootViewController()
+        window?.makeKeyAndVisible()
+        
         return true
-    }
+      }
+      
+      func createRootViewController() -> UIViewController {
+        let bundle = Bundle(for: LoginViewController.self)
+        let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: bundle)
+        return storyboard.instantiateInitialViewController() ?? UIViewController()
+      }
 
     // MARK: UISceneSession Lifecycle
 

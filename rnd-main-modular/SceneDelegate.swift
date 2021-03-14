@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import LoginModule
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var coordinator: MainCoordinator?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,7 +19,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+
+        // create the main navigation controller to be used for our app
+            let navController = UINavigationController()
+
+            // send that into our coordinator so that it can display view controllers
+            coordinator = MainCoordinator(navigationController: navController)
+
+            // tell the coordinator to take over control
+            coordinator?.start()
+
+            // create a basic UIWindow and activate it
+            window?.rootViewController = navController
+            window?.makeKeyAndVisible()
     }
+    
+//    func createRootViewController() -> UIViewController {
+//      let bundle = Bundle(for: LoginViewController.self)
+//      let storyboard = UIStoryboard(name: "LoginStoryboard", bundle: bundle)
+//      return storyboard.instantiateInitialViewController() ?? UIViewController()
+//    }
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
