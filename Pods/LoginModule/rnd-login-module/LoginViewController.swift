@@ -7,12 +7,11 @@
 
 import UIKit
 
-public class LoginViewController: UIViewController {
+class LoginViewController: UIViewController {
 
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
-        print("helpp")
     
     }
     

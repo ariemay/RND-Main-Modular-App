@@ -2,4 +2,3 @@ ${PODS_ROOT}/Target Support Files/Pods-rnd-main-modular/Pods-rnd-main-modular-fr
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/LoginModule/LoginModule.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
-${BUILT_PRODUCTS_DIR}/RWPickFlavor/RWPickFlavor.framework
