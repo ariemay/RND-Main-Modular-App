@@ -8,32 +8,73 @@
 import UIKit
 import LoginModule
 import SideMenu
+import RWPickFlavor
+
+protocol MainProtocol: class {
+    func toFlavor() -> Void
+}
+
+extension MainViewController: MainProtocol {
+    func toFlavor() -> Void {
+        remove(asChildViewController: currentVC)
+        print("remove currentvc")
+        currentVC = rwPickVC
+        print("instantiate rick")
+        add(asChildViewController: rwPickVC)
+    }
+}
 
 class MainViewController: UIViewController, Storyboarded {
     
+    
     var window: UIWindow?
+    var currentVC: UIViewController = LoginViewController()
     weak var coordinator: MainCoordinator?
     
     var menu: SideMenuNavigationController?
+    
+//    var sideVC: SideMenuViewController?
     
     let loginViewController = LoginViewController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
         let mainVC = SideMenuViewController(nibName:"SideMenuViewController", bundle:nil)
         menu = SideMenuNavigationController(rootViewController: mainVC)
         menu?.leftSide = true
+        menu?.setNavigationBarHidden(true, animated: true)
+        menu?.menuWidth = 300
         
+        
+//        sideVC?.delegate = self
+        mainVC.delegate = self
+        
+//
+        SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         menu?.presentationStyle = SideMenuPresentationStyle.menuSlideIn
-//        updateView()
+        currentVC = loginVC
+        updateView(view: currentVC)
     }
 
-    private lazy var loginVC: UIViewController = {
+    private lazy var loginVC: LoginViewController = {
         // Load Storyboard
         let bundle = Bundle(for: LoginViewController.self)
         let storyBoard : UIStoryboard = UIStoryboard(name: "LoginStoryboard", bundle:bundle)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+
+        // Add View Controller as Child View Controller
+        self.add(asChildViewController: nextViewController)
+
+        return nextViewController
+    }()
+    
+    private lazy var rwPickVC: PickFlavorViewController = {
+        // Load Storyboard
+        let bundle = Bundle(for: PickFlavorViewController.self)
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:bundle)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "PickFlavorViewController") as! PickFlavorViewController
 
         // Add View Controller as Child View Controller
         self.add(asChildViewController: nextViewController)
@@ -67,29 +108,39 @@ class MainViewController: UIViewController, Storyboarded {
         // Notify Child View Controller
         viewController.removeFromParent()
     }
-
-    private func updateView() {
-
+    
+    func toLoginX() -> Void {
+        remove(asChildViewController: currentVC)
+        currentVC = loginVC
         add(asChildViewController: loginVC)
+    }
+    
+//    func toFlavor() -> Void {
+//        remove(asChildViewController: currentVC)
+//        print("remove currentvc")
+//        currentVC = rwPickVC
+//        print("instantiate rick")
+//        add(asChildViewController: rwPickVC)
+//    }
 
-        /*
-         if segmentedControl.selectedSegmentIndex == 0 {
-         remove(asChildViewController: sessionsViewController)
-         add(asChildViewController: summaryViewController)
-         } else {
-         remove(asChildViewController: summaryViewController)
-         add(asChildViewController: sessionsViewController)
-         }
-         */
+    private func updateView(view: UIViewController) {
+        add(asChildViewController: view)
+    }
+    
+    @IBAction func goToLogin(_ sender: Any) {
+//        if currentVC == loginVC {
+//            toFlavor()
+//        } else {
+//        toLogin()
+//        }
+        coordinator?.login()
     }
     
     
-    
-    @IBAction func goToScreenNext(_ sender: Any) {
-//        coordinator?.login()
+    @IBAction func bugerMenu(_ sender: Any) {
         present(menu!, animated: true)
-       
     }
+    
 
     /*
     // MARK: - Navigation

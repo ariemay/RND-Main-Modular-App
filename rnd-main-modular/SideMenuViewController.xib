@@ -24,21 +24,21 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Home"/>
                     <connections>
-                        <action selector="goHome:" destination="-1" eventType="touchUpInside" id="Iem-Wg-g46"/>
+                        <action selector="goHome:" destination="-1" eventType="touchUpInside" id="zEG-ut-ktA"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBF-nB-YhK">
-                    <rect key="frame" x="115" y="175" width="38" height="30"/>
+                    <rect key="frame" x="44" y="175" width="180" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Login"/>
                     <connections>
-                        <action selector="goLogin:" destination="-1" eventType="touchUpInside" id="XMX-hc-XXr"/>
+                        <action selector="goFlavor:" destination="-1" eventType="touchUpInside" id="ak0-uk-a5P"/>
                     </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="87" y="97"/>
+            <point key="canvasLocation" x="86.956521739130437" y="96.428571428571431"/>
         </view>
     </objects>
     <resources>

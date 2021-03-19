@@ -161,9 +161,7 @@
 				C6B2987A25FCA6EC0061647B /* LaunchScreen.storyboard */,
 				C6B2987D25FCA6EC0061647B /* Info.plist */,
 				C6B2987525FCA6EB0061647B /* rnd_main_modular.xcdatamodeld */,
-				C6DC532925FE8687001358AC /* Coordinator.swift */,
-				C6DC532E25FE8803001358AC /* Storyboarded.swift */,
-				C6DC533B25FE8838001358AC /* MainCoordinator.swift */,
+				C6EA2EEC260431320054FA7E /* Coordinators */,
 				C6EA2ECA26035A080054FA7E /* SideMenuViewController.swift */,
 				C6EA2ECB26035A080054FA7E /* SideMenuViewController.xib */,
 				C6EA2ED126035DCF0054FA7E /* SideMenuView.swift */,
@@ -187,6 +185,16 @@
 				C6B2989325FCA6ED0061647B /* Info.plist */,
 			);
 			path = "rnd-main-modularUITests";
+			sourceTree = "<group>";
+		};
+		C6EA2EEC260431320054FA7E /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+				C6DC532925FE8687001358AC /* Coordinator.swift */,
+				C6DC532E25FE8803001358AC /* Storyboarded.swift */,
+				C6DC533B25FE8838001358AC /* MainCoordinator.swift */,
+			);
+			path = Coordinators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
