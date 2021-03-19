@@ -10,17 +10,22 @@ import LoginModule
 import SideMenu
 import RWPickFlavor
 
-protocol MainProtocol: class {
+protocol NavigationFlow: class {
     func toFlavor() -> Void
+    func toLogin() -> Void
 }
 
-extension MainViewController: MainProtocol {
+extension MainViewController: NavigationFlow {
     func toFlavor() -> Void {
         remove(asChildViewController: currentVC)
-        print("remove currentvc")
         currentVC = rwPickVC
-        print("instantiate rick")
         add(asChildViewController: rwPickVC)
+    }
+    
+    func toLogin() -> Void {
+        remove(asChildViewController: currentVC)
+        currentVC = loginVC
+        add(asChildViewController: loginVC)
     }
 }
 
@@ -43,14 +48,10 @@ class MainViewController: UIViewController, Storyboarded {
         let mainVC = SideMenuViewController(nibName:"SideMenuViewController", bundle:nil)
         menu = SideMenuNavigationController(rootViewController: mainVC)
         menu?.leftSide = true
-        menu?.setNavigationBarHidden(true, animated: true)
+        menu?.setNavigationBarHidden(true, animated: false)
         menu?.menuWidth = 300
-        
-        
-//        sideVC?.delegate = self
         mainVC.delegate = self
         
-//
         SideMenuManager.default.leftMenuNavigationController = menu
         SideMenuManager.default.addPanGestureToPresent(toView: self.view)
         menu?.presentationStyle = SideMenuPresentationStyle.menuSlideIn
@@ -109,48 +110,14 @@ class MainViewController: UIViewController, Storyboarded {
         viewController.removeFromParent()
     }
     
-    func toLoginX() -> Void {
-        remove(asChildViewController: currentVC)
-        currentVC = loginVC
-        add(asChildViewController: loginVC)
-    }
-    
-//    func toFlavor() -> Void {
-//        remove(asChildViewController: currentVC)
-//        print("remove currentvc")
-//        currentVC = rwPickVC
-//        print("instantiate rick")
-//        add(asChildViewController: rwPickVC)
-//    }
 
     private func updateView(view: UIViewController) {
         add(asChildViewController: view)
     }
     
-    @IBAction func goToLogin(_ sender: Any) {
-//        if currentVC == loginVC {
-//            toFlavor()
-//        } else {
-//        toLogin()
-//        }
-        coordinator?.login()
-    }
-    
-    
     @IBAction func bugerMenu(_ sender: Any) {
         present(menu!, animated: true)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
