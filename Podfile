@@ -9,8 +9,8 @@ target 'rnd-main-modular' do
   use_frameworks!
 
   # Pods for rnd-main-modular
-
-  pod 'LoginModule', '~> 0.1.5'
+  pod 'SideMenu'
+  pod 'LoginModule', '0.1.4'
 
   target 'rnd-main-modularTests' do
     inherit! :search_paths

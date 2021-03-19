@@ -24,7 +24,7 @@ class MainCoordinator: Coordinator {
     
     func login() {
         let bundle = Bundle(for: LoginViewController.self)
-        let storyBoard : UIStoryboard = UIStoryboard(name: "LoginStoryboard", bundle:bundle)w
+        let storyBoard : UIStoryboard = UIStoryboard(name: "LoginStoryboard", bundle:bundle)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
         nextViewController.modalPresentationStyle = .fullScreen
         navigationController.pushViewController(nextViewController, animated: true)

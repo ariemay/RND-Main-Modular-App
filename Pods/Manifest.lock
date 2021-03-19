@@ -1,12 +1,14 @@
 PODS:
   - Alamofire (4.9.1)
-  - LoginModule (0.1.5):
+  - LoginModule (0.1.4):
     - Alamofire (~> 4.7)
     - MBProgressHUD (~> 1.1.0)
   - MBProgressHUD (1.1.0)
+  - SideMenu (6.5.0)
 
 DEPENDENCIES:
-  - LoginModule (~> 0.1.5)
+  - LoginModule (= 0.1.4)
+  - SideMenu
 
 SPEC REPOS:
   https://bitbucket.cimbniaga.co.id/scm/omo/rnd-omo-ios-login-podspec.git:
@@ -14,12 +16,14 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - MBProgressHUD
+    - SideMenu
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  LoginModule: 06605bb4ee84c913cf31959eace37e84b200b2a7
+  LoginModule: f6d5d22b748023f3b3022d8355f46693564b7dc9
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
+  SideMenu: f583187d21c5b1dd04c72002be544b555a2627a2
 
-PODFILE CHECKSUM: a80025e2bde3f8a1445d4ced3133bc5120f67285
+PODFILE CHECKSUM: db1aef608b9f949fcc34f17650fc4319e16ebc1a
 
 COCOAPODS: 1.9.3

@@ -22,6 +22,9 @@
 		C6DC532A25FE8687001358AC /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC532925FE8687001358AC /* Coordinator.swift */; };
 		C6DC532F25FE8803001358AC /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC532E25FE8803001358AC /* Storyboarded.swift */; };
 		C6DC533C25FE8838001358AC /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6DC533B25FE8838001358AC /* MainCoordinator.swift */; };
+		C6EA2ECC26035A080054FA7E /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA2ECA26035A080054FA7E /* SideMenuViewController.swift */; };
+		C6EA2ECD26035A080054FA7E /* SideMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C6EA2ECB26035A080054FA7E /* SideMenuViewController.xib */; };
+		C6EA2ED226035DCF0054FA7E /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EA2ED126035DCF0054FA7E /* SideMenuView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		C6DC532925FE8687001358AC /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		C6DC532E25FE8803001358AC /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		C6DC533B25FE8838001358AC /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		C6EA2ECA26035A080054FA7E /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
+		C6EA2ECB26035A080054FA7E /* SideMenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideMenuViewController.xib; sourceTree = "<group>"; };
+		C6EA2ED126035DCF0054FA7E /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		CD15E11623B4FD154D739F89 /* Pods-rnd-main-modular.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-rnd-main-modular.debug.xcconfig"; path = "Target Support Files/Pods-rnd-main-modular/Pods-rnd-main-modular.debug.xcconfig"; sourceTree = "<group>"; };
 		F12CDDDE0B643A65B6D5C6E6 /* Pods_rnd_main_modular_rnd_main_modularUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_rnd_main_modular_rnd_main_modularUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -158,6 +164,9 @@
 				C6DC532925FE8687001358AC /* Coordinator.swift */,
 				C6DC532E25FE8803001358AC /* Storyboarded.swift */,
 				C6DC533B25FE8838001358AC /* MainCoordinator.swift */,
+				C6EA2ECA26035A080054FA7E /* SideMenuViewController.swift */,
+				C6EA2ECB26035A080054FA7E /* SideMenuViewController.xib */,
+				C6EA2ED126035DCF0054FA7E /* SideMenuView.swift */,
 			);
 			path = "rnd-main-modular";
 			sourceTree = "<group>";
@@ -288,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6EA2ECD26035A080054FA7E /* SideMenuViewController.xib in Resources */,
 				C6B2987C25FCA6EC0061647B /* LaunchScreen.storyboard in Resources */,
 				C6B2987925FCA6EC0061647B /* Assets.xcassets in Resources */,
 				C6B2987425FCA6EB0061647B /* Main.storyboard in Resources */,
@@ -418,11 +428,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6EA2ECC26035A080054FA7E /* SideMenuViewController.swift in Sources */,
 				C6B2987725FCA6EB0061647B /* rnd_main_modular.xcdatamodeld in Sources */,
 				C6DC533C25FE8838001358AC /* MainCoordinator.swift in Sources */,
 				C6B2986D25FCA6EB0061647B /* AppDelegate.swift in Sources */,
 				C6DC532A25FE8687001358AC /* Coordinator.swift in Sources */,
 				C6B2986F25FCA6EB0061647B /* SceneDelegate.swift in Sources */,
+				C6EA2ED226035DCF0054FA7E /* SideMenuView.swift in Sources */,
 				C622A33625FDCB2A00D05F20 /* MainViewController.swift in Sources */,
 				C6DC532F25FE8803001358AC /* Storyboarded.swift in Sources */,
 			);
